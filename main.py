@@ -29,3 +29,20 @@ def selection_sort(arr):
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
+
+# Insertion sort
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+print("Základní pole:", array)
+print("Bubble sort:", bubble_sort(array.copy()))
+print("Bogo sort:", bogo_sort(array.copy()))
+print("Selection sort:", selection_sort(array.copy()))
+print("Insertion sort:", insertion_sort(array.copy()))
